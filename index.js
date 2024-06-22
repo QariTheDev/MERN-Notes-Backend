@@ -8,8 +8,8 @@ const bcrypt = require('bcrypt');
 const User = require('./models/user.model');
 const Note = require('./models/note.model');
 
-const JWT_SECRET = process.env.JWT_SECRET;
-const JWT_REFRESH_SECRET = process.env.JWT_REFRESH_SECRET;
+const JWT_SECRET = '0c5a8e7c7ee4879778e29068498b28830ebe863f69dda24db0f2574c17616919';
+const JWT_REFRESH_SECRET = '0c5a8e7c7ee4879778e29068498b28830ebe863f69dda24db0f2574c17616919123';
 const ACCESS_TOKEN_EXPIRATION = '2d';
 const REFRESH_TOKEN_EXPIRATION = '7d';
 
@@ -54,7 +54,7 @@ function authenticateRefreshToken(req, res, next) {
 app.use(express.json());
 app.use(cors({ origin: '*' }));
 
-mongoose.connect(process.env.connectionString);
+mongoose.connect('mongodb+srv://talhaiqbal7272:Commandoz1@notes.ohqyao7.mongodb.net/');
 
 app.get("/", (req, res) => {
     res.json({ data: "Hello World" });
