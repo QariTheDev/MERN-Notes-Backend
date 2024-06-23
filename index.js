@@ -52,11 +52,7 @@ function authenticateRefreshToken(req, res, next) {
 }
 
 app.use(express.json());
-app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-});
+app.use(cors({ origin: '*' }));
 
 mongoose.connect(process.env.connectionString);
 
@@ -261,8 +257,8 @@ app.get("/search-notes", authenticateToken, async (req, res) => {
     }
 });
 
-app.listen(PORT, () => {
-    console.log(`Server is running on PORT ${PORT}`);
-});
+// app.listen(PORT, () => {
+//     console.log(`Server is running on PORT ${PORT}`);
+// });
 
 module.exports = app;
