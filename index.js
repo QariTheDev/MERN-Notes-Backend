@@ -1,14 +1,12 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 require('dotenv').config();
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 
 const User = require('./models/user.model');
 const Note = require('./models/note.model');
-
-const cors = require('cors');
-app.use(cors())
 
 const JWT_SECRET = process.env.JWT_SECRET;
 const JWT_REFRESH_SECRET = process.env.JWT_REFRESH_SECRET;
