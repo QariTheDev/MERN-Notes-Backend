@@ -52,7 +52,7 @@ function authenticateRefreshToken(req, res, next) {
 }
 
 app.use(express.json());
-app.use(cors({ origin: 'https://mern-notes-two-sigma.vercel.app' }));
+app.use(cors({ origin: '*' }));
 
 mongoose.connect(process.env.connectionString);
 
