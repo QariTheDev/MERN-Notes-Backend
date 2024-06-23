@@ -1,18 +1,15 @@
 {
     "version": 2,
-    "cors": {
-        "allowOrigins": [
-            "https://mern-notes-two-sigma.vercel.app"
-        ],
-        "allowMethods": [
-            "GET",
-            "POST",
-            "PUT",
-            "DELETE"
-        ],
-        "allowHeaders": [
-            "Content-Type",
-            "Authorization"
-        ]
-    }
+    "builds": [
+        {
+            "src": "./index.js",
+            "use": "@vercel/node"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "/"
+        }
+    ]
 }
